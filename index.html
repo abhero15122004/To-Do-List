@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List using Local Storage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <h1>To-Do List</h1>
+
+        <form id="todo-form" class="todo-form">
+            <label class="sr-only" for="item-name">Item Name</label>
+            <input
+                id="item-name"
+                type="text"
+                placeholder="Item Name"
+                maxlength="160"
+                required
+            >
+
+            <label class="sr-only" for="item-date">Deadline</label>
+            <input
+                id="item-date"
+                type="date"
+                aria-label="Deadline"
+                required
+            >
+
+            <label class="sr-only" for="item-priority">Priority</label>
+            <select id="item-priority" required>
+                <option value="" disabled selected>Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <button type="submit" class="add-button">Add Item</button>
+
+            <p id="form-message" class="form-message"
+               role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="task-section">
+            <h2>Today's TodoList
+                <span id="today-count" class="count"></span>
+            </h2>
+            <div id="today-list" class="task-list"></div>
+        </section>
+
+        <section class="task-section">
+            <h2>Future TodoList
+                <span id="future-count" class="count"></span>
+            </h2>
+            <div id="future-list" class="task-list"></div>
+        </section>
+
+        <section class="task-section">
+            <h2>Completed TodoList
+                <span id="completed-count" class="count"></span>
+            </h2>
+            <div id="completed-list" class="task-list"></div>
+        </section>
+
+        <p class="storage-note">
+            Your tasks are saved in this browser using local storage.
+        </p>
+    </main>
+</body>
+</html>
